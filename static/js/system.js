@@ -66,3 +66,37 @@ month = " de Novembro"
 else if(mymonth ==11)
 month = " de Dezembro"
   }
+
+$(document).ready(function() {
+    $("#login").click(function() {
+        var email2 = $("#emaill");
+        var emailPost2 = email2.val();
+        var senha2 = $("#senhal");
+        var senhaPost2 = senha2.val();
+        $.post("login.php", {lemail: emailPost2, lsenha: senhaPost2},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+$(document).ready(function() {
+    $("#registro").click(function() {
+        var email3 = $("#emailr");
+        var emailPost3 = email3.val();
+        var senha3 = $("#senhar");
+        var senhaPost3 = senha3.val();
+         var nome3 = $("#nomer");
+        var nome3Post = nome3.val();
+         var sobrenome3 = $("#sobrenomer");
+        var sobrenomePost3 = sobrenome3.val();
+        $.post("register.php", {remail: emailPost3, rsenha: senhaPost3, nomer: nome3Post, sobrer: sobrenomePost3},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});

@@ -1,4 +1,13 @@
 <?php
+require '../system/database.php';
+require '../system/config.php';
+if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$user = DBRead('user', "WHERE id = '{$iduser}' LIMIT 1 ");
+$user = $user[0];
+}
+?>
+<?php
 $app = $_POST['app'];
 if($app == 1){
 ?>
@@ -27,11 +36,11 @@ if($app == 1){
 
 	<div id="align">
 			<img src="http://www.contiki.com/img/default_avatar.png?1516975667" class="avatarpaypal">
-			<p class="bakata">Alexandre Silva</p>
+			<p class="bakata"><?php echo $user['nome'];?> <?php echo $user['sobrenome'];?></p>
 <div class="saldopaypal">
 <p class="pp">Saldo PayPal</p>
 <br>
-<h2>R$ 20,00</h2>
+<h2>R$ <?php echo $user['paypal_count'];?></h2>
 </div>
 
 <div class="completado">
