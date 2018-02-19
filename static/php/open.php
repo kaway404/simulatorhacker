@@ -85,3 +85,42 @@ if(document.getElementById("urlado").value == "https://paypal.com") {
 </script>
 
 <?php } ?>
+
+<?php
+$app = $_POST['app'];
+if($app == 2){
+?>
+
+<div class="back-consolo">
+	<p style="color: #fff; padding: 5px; font-size: 19px;">Terminal</p>
+	<div id="te"><p style="color: #fff;"><?php echo $user['ip']; ?></p>
+		<form>
+		<input type="text" class="terminalc" id="command" placeholder="command">
+		<input type="submit" id="okay" style="opacity: 0;">
+	</form>
+	</div>
+	<div id="comando"></div>
+</div>
+
+<script>
+var janela = document.getElementById('janela');
+janela.style = "opacity: 1; left: 0";
+ $('#close').click(function(){
+        	 janela.style = "left: -2000px"
+   		 });
+
+    $(document).ready(function() {
+    $("#okay").click(function() {
+        var command = $("#command");
+        var commandPost = command.val();
+        $.post("/static/php/command.php", {command: commandPost},
+        function(data){
+         $("#comando").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+
+<?php } ?>
