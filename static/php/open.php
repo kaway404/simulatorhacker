@@ -76,7 +76,7 @@ if(document.getElementById("urlado").value == "https://paypal.com") {
          apppaypal.style = "display: none;"
       }
           
-         }, 1);
+         }, 100);
 
  $('#close').click(function(){
         	 janela.style = "left: -2000px"
