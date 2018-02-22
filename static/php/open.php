@@ -30,7 +30,7 @@ if($app == 1){
 		<div id="paypalbaka">
 			<div class="header-paypal">
 				<div id="align">
-				<img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_960_720.png" class="logopaypal"/>
+				<img src="https://fwab.org/wp-content/uploads/Paypal-logo-1.png" class="logopaypal"/>
 			</div>
 			</div>
 
@@ -71,12 +71,16 @@ if(document.getElementById("urlado").value === "https://paypal.com") {
              internet.style = "display: none;"
              apppaypal.style = "display: block;"
       }
+     else if(document.getElementById("urlado").value === "https://google.com") {
+             internet.style = "display: none;"
+             apppaypal.style = "display: block;"
+      }
       else{
       	 internet.style = "display: block;"
          apppaypal.style = "display: none;"
       }
           
-         }, 100);
+         }, 10);
 
  $('#close').click(function(){
         	 janela.style = "left: -2000px"
@@ -99,7 +103,11 @@ if($app == 2){
 		<input type="submit" id="okay" style="opacity: 0;">
 	</form>
 	</div>
-	<div id="comando"></div>
+	<div id="comando">
+		<div class="space"></div>
+<div id="flash"></div>
+<div id="show"></div>
+	</div>
 </div>
 
 <script>
@@ -109,17 +117,32 @@ janela.style = "opacity: 1; left: 0";
         	 janela.style = "left: -2000px"
    		 });
 
-    $(document).ready(function() {
-    $("#okay").click(function() {
-        var command = $("#command");
-        var commandPost = command.val();
-        $.post("/static/php/command.php", {command: commandPost},
-        function(data){
-         $("#comando").html(data);
-         }
-         , "html");
-         return false;
-    });
+
+$(function() {
+$("#okay").click(function() {
+var textcontent = $("#command").val();
+var dataString = 'content='+ textcontent;
+if(textcontent=='')
+{
+$("#content").focus();
+}
+else
+{
+$.ajax({
+type: "POST",
+url: "static/php/command.php",
+data: dataString,
+cache: true,
+success: function(html){
+$("#show").after(html);
+document.getElementById('content').value='';
+$("#flash").hide();
+$("#content").focus();
+}  
+});
+}
+return false;
+});
 });
 </script>
 
