@@ -40,7 +40,7 @@ if($app == 1){
 <div class="saldopaypal">
 <p class="pp">Saldo PayPal</p>
 <br>
-<h2>R$ <?php echo $user['paypal_count'];?></h2>
+<h2 id="carteirapaypal">R$ <?php echo $user['paypal_count'];?></h2>
 </div>
 
 <div class="completado">
@@ -146,4 +146,56 @@ return false;
 });
 </script>
 
+<?php } ?>
+
+<?php
+$app = $_POST['app'];
+if($app == 3){
+?>
+<div class="bitcoin">
+<center>
+<h1>Minha carteira BitCoin</h1>
+
+<p id="carteirabtc"><?php echo $user['btc_count'];?></p>
+
+<button class="buy" id="buy">Buy BitCoin with PayPal</button>
+
+<div class="paypalbuy" id="paypalbuy">
+
+<p>Você tem R$ <span id="pyp"> <?php echo $user['paypal_count'];?></span> em saldo PayPal</p>
+
+<button class="buy" id="buyok">Converter em BitCoin</button>
+
+<div id="okmsg"></div>
+
+</div>
+
+</center>
+</div>
+<script>
+var janela = document.getElementById('janela');
+var paypalbuy = document.getElementById('paypalbuy');
+janela.style = "opacity: 1; left: 0";
+ $('#close').click(function(){
+        	 janela.style = "left: -2000px"
+   		 });
+
+  $('#buy').click(function(){
+        	 paypalbuy.style = "top: 20px; opacity: 1;"
+   		 });
+
+  $(document).ready(function() {
+    $("#buyok").click(function() {
+        var paypalcount = <?php echo $user['paypal_count'];?>;
+        $.post("/static/php/buybtc.php?nani=404", {paypalcount: paypalcount},
+        function(data){
+         $("#okmsg").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+
+ </script>
 <?php } ?>

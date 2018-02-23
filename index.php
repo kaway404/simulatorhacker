@@ -28,6 +28,9 @@ $user = $user[0];
 		<button class="app" id="app2">
 			<img src="https://www.codigofonte.com.br/wp-content/uploads/2014/07/command_line.png"/>
 		</button>
+        <button class="app" id="app3">
+            <img src="https://www.canbike.org/public/images/030114/Bitcoin_Logo.png"/>
+        </button>
 	</div>
 
 <div class="janela" id="janela">
@@ -91,6 +94,18 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
    $(document).ready(function() {
     $("#app2").click(function() {
         var app = 2;
+        $.post("/static/php/open.php", {app: app},
+        function(data){
+         $("#application").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+     $(document).ready(function() {
+    $("#app3").click(function() {
+        var app = 3;
         $.post("/static/php/open.php", {app: app},
         function(data){
          $("#application").html(data);

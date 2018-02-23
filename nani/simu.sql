@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Fev-2018 às 20:20
+-- Generation Time: 23-Fev-2018 às 17:41
 -- Versão do servidor: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -38,16 +38,19 @@ CREATE TABLE `hack_user` (
   `datec` date NOT NULL,
   `ip` varchar(255) NOT NULL,
   `lastlogin` datetime NOT NULL,
-  `paypal_count` varchar(2555) NOT NULL
+  `paypal_count` varchar(2555) NOT NULL,
+  `btc_count` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `hack_user`
 --
 
-INSERT INTO `hack_user` (`id`, `email`, `senha`, `nome`, `sobrenome`, `inisession`, `datec`, `ip`, `lastlogin`, `paypal_count`) VALUES
-(6, 'kaway@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'Alexandre', 'Silva', '2018-02-19', '2018-02-19', '187.55.39.95', '2018-02-19 16:17:49', '20'),
-(7, 'danielzinhooficial@gmail.com', 'f8ad67e974bfe0bfd1f0217ee4744d5096dcac79', 'Daniel', 'Fontenelle', '2018-02-19', '2018-02-19', '187.17.157.97', '2018-02-19 16:17:25', '20');
+INSERT INTO `hack_user` (`id`, `email`, `senha`, `nome`, `sobrenome`, `inisession`, `datec`, `ip`, `lastlogin`, `paypal_count`, `btc_count`) VALUES
+(6, 'kaway@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'Alexandre', 'Silva', '2018-02-19', '2018-02-19', '187.55.39.95', '2018-02-23 12:59:43', '0', '0.17182491'),
+(7, 'danielzinhooficial@gmail.com', 'f8ad67e974bfe0bfd1f0217ee4744d5096dcac79', 'Daniel', 'Fontenelle', '2018-02-19', '2018-02-19', '187.17.157.97', '2018-02-19 16:17:25', '20', ''),
+(8, 'vandilsonbarbosa1999@hotmail.com', 'ece1c313333bf9f18086a68c836e17a0ffcb4811', 'Vandilson', 'Barbosa', '2018-02-19', '2018-02-19', '89.114.245.202', '2018-02-19 16:20:26', '20', ''),
+(9, 'joao@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'João', 'Silva', '2018-02-19', '2018-02-19', '187.55.39.95', '2018-02-19 17:33:29', '5120', '');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +70,7 @@ ALTER TABLE `hack_user`
 -- AUTO_INCREMENT for table `hack_user`
 --
 ALTER TABLE `hack_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

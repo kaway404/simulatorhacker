@@ -53,6 +53,7 @@ mysql_query('SET character_set_results=utf8');
 	$form2['datec'] = $datec;
 	$form2['ip'] = $ip;
 	$form2['paypal_count'] = "20";
+	$form2['btc_count'] = "0,0";
 	
 	if( DBCreate( 'user', $form2 ) ){	
 	print "<p>Cadastrado com sucesso!</p>";
