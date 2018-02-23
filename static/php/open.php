@@ -80,7 +80,7 @@ if(document.getElementById("urlado").value == "https://paypal.com") {
          apppaypal.style = "display: none;"
       }
           
-         }, 10);
+         }, 1);
 
  $('#close').click(function(){
         	 janela.style = "left: -2000px"
