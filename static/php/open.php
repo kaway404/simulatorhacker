@@ -67,7 +67,7 @@ janela.style = "opacity: 1; left: 0";
    		 });
 
  window.setInterval(function(){
-if(document.getElementById("urlado").value === "https://paypal.com") {
+if(document.getElementById("urlado").value == "https://paypal.com") {
              internet.style = "display: none;"
              apppaypal.style = "display: block;"
       }
