@@ -18,12 +18,15 @@ $value_bitcoin = round($brl_value / $bitcoin_price, 8);
 $menospaypal = $user['paypal_count'] - $user['paypal_count'];
 
 $userUP['paypal_count'] = $menospaypal;
-$userUP['btc_count'] = $user['btc_count'] + $value_bitcoin;
+$userUP['btc_count'] = $value_bitcoin + $user['btc_count'];
+
+$valorbtcnow = $value_bitcoin + $user['btc_count'];
+
 if( DBUpdate( 'user', $userUP, "id = '{$iduser}'" ) ){
 ?>
-<p>Você comprou <?php echo $value_bitcoin; ?></p>
+<p>Você comprou <?php echo $value_bitcoin; ?> <br> pelo valor de R$ <?php echo $user['paypal_count'];?> </p>
 <script>
-	$("#carteirabtc").text("<?php echo $value_bitcoin; ?>");
+	$("#carteirabtc").text("<?php echo $valorbtcnow; ?>");
 	$("#carteirapaypal").text("<?php echo $menospaypal; ?>");
 	$("#pyp").text("<?php echo $menospaypal; ?>");
 </script>
