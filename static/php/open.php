@@ -205,7 +205,13 @@ $app = $_POST['app'];
 if($app == 4){
 ?>
 
+<div class="mail">
+<div class="panel left">
+<p class="mas">Mail</p>
+<li><?php echo $user['email'];?></li>
+</div>
 
+</div>
 
 <script>
 var janela = document.getElementById('janela');

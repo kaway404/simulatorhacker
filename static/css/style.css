@@ -437,3 +437,39 @@ header{
 	right: 15px;
 	float: right;
 }
+
+.mail{
+	background-image: url(http://2.bp.blogspot.com/-CecgvWgcOrI/VcXLc9GlfQI/AAAAAAAABPI/7_vfl0XTtNA/s1600/Mountain01%2B%252800000%2529.jpg);
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-size: cover
+}
+
+.mail .panel{
+	position: relative;
+	background: #336caced;
+	width: 15%;
+	height: 100%;
+}
+
+.mas{
+	color: #fff;
+	padding: 10px;
+	font-size: 1.2em;
+}
+
+.mail .panel li{
+	padding: 0px;
+	color: #fff;
+	left: 0px;
+	position: relative;
+	padding: 10px;
+	border-left: 4px solid #fff;
+	font-size: 1.4em;
+	cursor: pointer;
+}
+
+.mail .panel li:hover{
+		background: #fffefe3b;
+	}
