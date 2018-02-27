@@ -19,7 +19,7 @@ header{
 }
 
 .background{
-	background-image: url(https://orig00.deviantart.net/5d78/f/2015/248/c/9/kali_linux___fanmade__black__1920x1080_by_kozmosindigo-d98fo56.jpg);
+	background-image: url(https://i.ytimg.com/vi/zXcrRA7kNI0/maxresdefault.jpg);
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -54,17 +54,23 @@ header{
 	width: 33px;
 	border: none;
 	background: transparent;
-	margin-top: 5px;
+	margin-top: 10px;
 	left: 8px;
 	position: relative;
 	cursor: pointer;
-	border-radius: 30%;
+	border-radius: 50%;
+	transition: 1s;
+}
+
+.app:hover{
+	transform: scale(1.5);
 }
 
 
 .app img{
 	width: 100%;
 	height: 100%;
+	border-radius: 20%;
 }
 
 .appbrowser{
@@ -374,4 +380,60 @@ header{
 
 .paypalbuy p{
 	font-size: 1.8em;
+}
+
+#opena{
+	float: left;
+	position: absolute;
+	color: #fff;
+	font-size: 1.3em;
+	left: 5px;
+	padding: 3px;
+	cursor: pointer;
+}
+
+#opena:hover + #menu{
+	top: 30px;
+}
+
+#menu{
+	height: auto;
+	width: 170px;
+	background: rgba(0,0,0,.90);
+	position: absolute;
+	border: 1px solid #9e9191;
+	border-radius: 0px 5px;
+	left: 5px;
+	top: -200px;
+	transition: 1s;
+}
+
+#menu:hover{
+	top: 30px;
+}
+
+#menu li{
+	text-align: center;
+	float: left;
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+#menu li:hover{
+	background: #151515;
+}
+
+#menu button{
+	position: relative;
+	left: -10px;
+}
+
+#menu h2{
+	color: #fff;
+	font-size: 1.4em;
+	position: relative;
+	top: 15px;
+	right: 15px;
+	float: right;
 }

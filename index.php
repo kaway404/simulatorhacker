@@ -18,6 +18,33 @@ $user = $user[0];
 </head>
 <body onload="horas()">
 	<header>
+        <p id="opena">Applications</p>
+        <div id="menu">
+        <li id="appa">
+        <h2>Browser</h2>
+        <button class="app">
+            <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/internet-explorer-512.png"/>
+        </button>
+    </li>
+    <li id="appa2">
+        <h2>Terminal</h2>
+        <button class="app">
+            <img src="https://www.codigofonte.com.br/wp-content/uploads/2014/07/command_line.png"/>
+        </button>
+    </li>
+    <li id="appa3">
+        <h2>BitCoin</h2>
+        <button class="app">
+            <img src="https://www.canbike.org/public/images/030114/Bitcoin_Logo.png"/>
+        </button>
+    </li>
+    <li id="appa4">
+        <h2>Mailer</h2>
+         <button class="app">
+            <img src="https://cdn.tenforums.com/geek/gars/images/2/types/thumb_Mail-2.png"/>
+        </button>
+    </li>
+        </div>
 		<h1 id="data">0:00</h1>
 	</header>
 
@@ -31,6 +58,9 @@ $user = $user[0];
         <button class="app" id="app3">
             <img src="https://www.canbike.org/public/images/030114/Bitcoin_Logo.png"/>
         </button>
+         <button class="app" id="app4">
+            <img src="https://cdn.tenforums.com/geek/gars/images/2/types/thumb_Mail-2.png"/>
+        </button>
 	</div>
 
 <div class="janela" id="janela">
@@ -41,6 +71,8 @@ $user = $user[0];
 <div id="application"></div>
 
 </div>
+
+
 
 </div>
 
@@ -114,6 +146,67 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
          return false;
     });
 });
+
+          $(document).ready(function() {
+    $("#app4").click(function() {
+        var app = 4;
+        $.post("/static/php/open.php", {app: app},
+        function(data){
+         $("#application").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+ $(document).ready(function() {
+    $("#appa").click(function() {
+        var app = 1;
+        $.post("/static/php/open.php", {app: app},
+        function(data){
+         $("#application").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+ $(document).ready(function() {
+    $("#appa2").click(function() {
+        var app = 2;
+        $.post("/static/php/open.php", {app: app},
+        function(data){
+         $("#application").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+ $(document).ready(function() {
+    $("#appa3").click(function() {
+        var app = 3;
+        $.post("/static/php/open.php", {app: app},
+        function(data){
+         $("#application").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+ $(document).ready(function() {
+    $("#appa4").click(function() {
+        var app = 4;
+        $.post("/static/php/open.php", {app: app},
+        function(data){
+         $("#application").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+      
 </script>
 <?php } ?> 
 

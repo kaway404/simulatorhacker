@@ -199,3 +199,21 @@ janela.style = "opacity: 1; left: 0";
 
  </script>
 <?php } ?>
+
+<?php
+$app = $_POST['app'];
+if($app == 4){
+?>
+
+
+
+<script>
+var janela = document.getElementById('janela');
+var paypalbuy = document.getElementById('paypalbuy');
+janela.style = "opacity: 1; left: 0";
+ $('#close').click(function(){
+        	 janela.style = "left: -2000px"
+   		 });
+</script>
+
+<?php } ?>
