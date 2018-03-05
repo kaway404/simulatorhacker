@@ -241,6 +241,7 @@ foreach ($resultsearchs2 as $resultsearch2):
 
 <div class="panel left">
 <p class="mas">Mail</p>
+<li> + Enviar e-mail</li>
 <li class="ativo"><?php echo $user['email'];?></li>
 </div>
 

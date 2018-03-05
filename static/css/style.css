@@ -439,7 +439,7 @@
 	}
 
 	.mail{
-		background-image: url(http://2.bp.blogspot.com/-CecgvWgcOrI/VcXLc9GlfQI/AAAAAAAABPI/7_vfl0XTtNA/s1600/Mountain01%2B%252800000%2529.jpg);
+		background-image: url(/img/backmail.jpg);
 		position: relative;
 		width: 100%;
 		height: 100%;
@@ -465,9 +465,9 @@
 		left: 0px;
 		position: relative;
 		padding: 10px;
-		border-left: 4px solid #fff;
 		font-size: 1vw;
 		cursor: pointer;
+		margin-top: 10px;
 	}
 
 	.mail .panel li:hover{
@@ -476,6 +476,7 @@
 
 		.ativo{
 			background: #fffefe3b;
+			border-left: 4px solid #fff;
 		}
 
 		.mensagen{
