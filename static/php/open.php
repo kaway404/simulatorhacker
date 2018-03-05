@@ -208,6 +208,9 @@ if($app == 4){
 <div class="mail">
 
 
+<div id="viewmsg">
+</div>
+
 <div class="mensagen center">
   <h1>Mensagens</h1>
   <?php
@@ -218,7 +221,7 @@ $resultsearchs2 = DBRead( 'mail', "WHERE iduser = '{$idusermail}'  LIMIT 1000" )
 else
 foreach ($resultsearchs2 as $resultsearch2):
 ?>
-<li>
+<li id="viewmsg<?php echo $resultsearch2['id'];  ?>">
   <h1 class="title-m"><?php
   $str2 = nl2br( $resultsearch2['title'] );
   $len2 = strlen( $str2 );
@@ -236,12 +239,31 @@ foreach ($resultsearchs2 as $resultsearch2):
   else    
    echo substr( $str2, 0, $max2 ) . '...'?></p>
 </li>
+
+<script type="text/javascript">
+  var viewmsg = document.getElementById('viewmsg');
+   $(document).ready(function() {
+    $("#viewmsg<?php echo $resultsearch2['id'];  ?>").click(function() {
+      viewmsg.style = "opacity: 1;";
+        var idmsg = <?php echo $resultsearch2['id'];  ?>;
+        $.post("/static/php/open.php?mailviews=<?php echo $resultsearch2['id'];  ?>", {msg: idmsg},
+        function(data){
+         $("#viewmsg").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+
 <?php endforeach; ?>
  </div>
 
+
+
 <div class="panel left">
 <p class="mas">Mail</p>
-<li> + Enviar e-mail</li>
+<li id="sendmsg"> + Enviar e-mail</li>
 <li class="ativo"><?php echo $user['email'];?></li>
 </div>
 
@@ -257,3 +279,26 @@ janela.style = "opacity: 1; left: 0";
 </script>
 
 <?php } ?>
+
+ <?php
+if(isset($_GET['mailviews'])){
+  if(isset($_POST['msg'])){
+?>
+
+
+  <h1>Visualizando mensagem.</h1>
+  <?php
+$idusermail = $user['id'];
+$mailid = $_POST['msg'];
+$resultsearchs23 = DBRead( 'mail', "WHERE id = '{$mailid}' and iduser = '{$idusermail}'  LIMIT 1" );
+ if (!$resultsearchs23)
+ echo '<h1>Nenhum E-mail</h1>';
+else
+foreach ($resultsearchs23 as $resultsearch23):
+?>
+
+ <h1 class="title-m"><?php echo $resultsearch23['title'];?></h1>
+
+  <p><?php echo $resultsearch23['texto'];?></p>
+
+<?php endforeach; } } ?>
