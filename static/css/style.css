@@ -486,6 +486,7 @@
 			height: 100%;
 			top: 0;
 			left: 14%;
+			overflow: auto;
 		}
 
 		.mensagen li{
