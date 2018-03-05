@@ -21,7 +21,7 @@ if($app == 1){
 		<div id="suger">
 			<h1>Sites sugeridos</h1>
 			<button class="appbrowser" id="paypal">
-			<img src="https://www.paypalobjects.com/webstatic/icon/pp258.png"/>
+			<img src="/img/paypal.png"/>
 			</button>
 
 			<div class="background51"></div>
@@ -30,12 +30,12 @@ if($app == 1){
 		<div id="paypalbaka">
 			<div class="header-paypal">
 				<div id="align">
-				<img src="https://fwab.org/wp-content/uploads/Paypal-logo-1.png" class="logopaypal"/>
+				<img src="/img/logopaypal.png" class="logopaypal"/>
 			</div>
 			</div>
 
 	<div id="align">
-			<img src="http://www.contiki.com/img/default_avatar.png?1516975667" class="avatarpaypal">
+			<img src="/img/avatar.png" class="avatarpaypal">
 			<p class="bakata"><?php echo $user['nome'];?> <?php echo $user['sobrenome'];?></p>
 <div class="saldopaypal">
 <p class="pp">Saldo PayPal</p>
@@ -206,9 +206,42 @@ if($app == 4){
 ?>
 
 <div class="mail">
+
+
+<div class="mensagen center">
+  <h1>Mensagens</h1>
+  <?php
+$idusermail = $user['id'];
+$resultsearchs2 = DBRead( 'mail', "WHERE iduser = '{$idusermail}'  LIMIT 1000" );
+ if (!$resultsearchs2)
+ echo '<h1>Nenhum E-mail</h1>';
+else
+foreach ($resultsearchs2 as $resultsearch2):
+?>
+<li>
+  <h1 class="title-m"><?php
+  $str2 = nl2br( $resultsearch2['title'] );
+  $len2 = strlen( $str2 );
+  $max2 = 24;
+   if( $len2 <= $max2 )
+   echo $str2;
+  else    
+   echo substr( $str2, 0, $max2 ) . '...'?></h1>
+    <p><?php
+  $str2 = nl2br( $resultsearch2['texto'] );
+  $len2 = strlen( $str2 );
+  $max2 = 100;
+   if( $len2 <= $max2 )
+   echo $str2;
+  else    
+   echo substr( $str2, 0, $max2 ) . '...'?></p>
+</li>
+<?php endforeach; ?>
+ </div>
+
 <div class="panel left">
 <p class="mas">Mail</p>
-<li><?php echo $user['email'];?></li>
+<li class="ativo"><?php echo $user['email'];?></li>
 </div>
 
 </div>

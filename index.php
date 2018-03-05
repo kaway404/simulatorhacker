@@ -14,7 +14,7 @@ $user = $user[0];
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="/static/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
 </head>
 <body onload="horas()">
 	<header>
@@ -23,25 +23,25 @@ $user = $user[0];
         <li id="appa">
         <h2>Browser</h2>
         <button class="app">
-            <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/internet-explorer-512.png"/>
+            <img src="img/internet-explorer-512.png"/>
         </button>
     </li>
     <li id="appa2">
         <h2>Terminal</h2>
         <button class="app">
-            <img src="https://www.codigofonte.com.br/wp-content/uploads/2014/07/command_line.png"/>
+            <img src="img/termina.png"/>
         </button>
     </li>
     <li id="appa3">
         <h2>BitCoin</h2>
         <button class="app">
-            <img src="https://www.canbike.org/public/images/030114/Bitcoin_Logo.png"/>
+            <img src="img/bitcoin.png"/>
         </button>
     </li>
     <li id="appa4">
         <h2>Mailer</h2>
          <button class="app">
-            <img src="https://cdn.tenforums.com/geek/gars/images/2/types/thumb_Mail-2.png"/>
+            <img src="img/thumb_Mail-2.png"/>
         </button>
     </li>
         </div>
@@ -50,16 +50,16 @@ $user = $user[0];
 
 	<div class="task">
 		<button class="app" id="app">
-			<img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/internet-explorer-512.png"/>
+			<img src="img/internet-explorer-512.png"/>
 		</button>
 		<button class="app" id="app2">
-			<img src="https://www.codigofonte.com.br/wp-content/uploads/2014/07/command_line.png"/>
+			<img src="img/termina.png"/>
 		</button>
         <button class="app" id="app3">
-            <img src="https://www.canbike.org/public/images/030114/Bitcoin_Logo.png"/>
+            <img src="img/bitcoin.png"/>
         </button>
          <button class="app" id="app4">
-            <img src="https://cdn.tenforums.com/geek/gars/images/2/types/thumb_Mail-2.png"/>
+            <img src="img/thumb_Mail-2.png"/>
         </button>
 	</div>
 

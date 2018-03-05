@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23-Fev-2018 às 17:41
+-- Generation Time: 05-Mar-2018 às 20:42
 -- Versão do servidor: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `simu`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `hack_mail`
+--
+
+CREATE TABLE `hack_mail` (
+  `id` int(11) NOT NULL,
+  `iduser` varchar(255) NOT NULL,
+  `title` text NOT NULL,
+  `texto` text NOT NULL,
+  `idquem` varchar(255) NOT NULL,
+  `ativo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `hack_mail`
+--
+
+INSERT INTO `hack_mail` (`id`, `iduser`, `title`, `texto`, `idquem`, `ativo`) VALUES
+(1, '6', 'Paypal', 'Olá', '8', 1),
+(2, '6', 'Paypal', 'Olá', '8', 1);
 
 -- --------------------------------------------------------
 
@@ -47,14 +70,24 @@ CREATE TABLE `hack_user` (
 --
 
 INSERT INTO `hack_user` (`id`, `email`, `senha`, `nome`, `sobrenome`, `inisession`, `datec`, `ip`, `lastlogin`, `paypal_count`, `btc_count`) VALUES
-(6, 'kaway@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'Alexandre', 'Silva', '2018-02-19', '2018-02-19', '187.55.39.95', '2018-02-23 12:59:43', '0', '0.17182491'),
+(6, 'kaway@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'Alexandre', 'Silva', '2018-02-19', '2018-02-19', '187.55.39.95', '2018-03-05 16:14:59', '0', '0.4139984'),
 (7, 'danielzinhooficial@gmail.com', 'f8ad67e974bfe0bfd1f0217ee4744d5096dcac79', 'Daniel', 'Fontenelle', '2018-02-19', '2018-02-19', '187.17.157.97', '2018-02-19 16:17:25', '20', ''),
 (8, 'vandilsonbarbosa1999@hotmail.com', 'ece1c313333bf9f18086a68c836e17a0ffcb4811', 'Vandilson', 'Barbosa', '2018-02-19', '2018-02-19', '89.114.245.202', '2018-02-19 16:20:26', '20', ''),
-(9, 'joao@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'João', 'Silva', '2018-02-19', '2018-02-19', '187.55.39.95', '2018-02-19 17:33:29', '5120', '');
+(9, 'joao@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'João', 'Silva', '2018-02-19', '2018-02-19', '187.55.39.95', '2018-02-19 17:33:29', '5120', ''),
+(10, 'josecuzinhogostoso@gmail.com', 'b1478c13a5740d9b9d1395cebd58560a9f8980c5', 'MAteus', 'Heckert', '2018-02-24', '2018-02-24', '189.31.72.207', '2018-02-24 22:45:08', '0', '1.8257505101871E+16'),
+(11, 'alexferreira0888@hotmail.com', '6182b79dbdfb51921181f9dfa9061507cf2d8e43', 'Jovem', 'Gordo', '2018-02-27', '2018-02-27', '177.32.23.27', '2018-02-27 15:59:53', '20', '0,0'),
+(12, 'alexferreira012@hotmail.com', '76a3708a1425833928a1c67421b0958a6b1add7d', 'Jovem ', 'Gordo 2', '2018-02-27', '2018-02-27', '177.32.23.27', '2018-02-27 16:03:06', '20', '0,0'),
+(13, 'vandilsonbRBOSA1000@HOTMAIL.COM', '4557b921cca88f57476a7102c9860fdc11686683', 'asdasdsa', 'adsadasdsa', '2018-02-27', '2018-02-27', '89.114.245.202', '2018-02-27 18:17:47', '0', '0.00027113');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `hack_mail`
+--
+ALTER TABLE `hack_mail`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `hack_user`
@@ -67,10 +100,16 @@ ALTER TABLE `hack_user`
 --
 
 --
+-- AUTO_INCREMENT for table `hack_mail`
+--
+ALTER TABLE `hack_mail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `hack_user`
 --
 ALTER TABLE `hack_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
