@@ -53,10 +53,10 @@ $("#msgnotifica").text("Nova conquista");
     $okemail['title'] = 'Conquista liberada';
     $okemail['texto'] = 'Essa conquista, você liberou ao comprar BitCoin';
     if( DBCreate( 'conquistas', $okup, "id = '{$iduser}'" ) ){
-      echo 'ok';
+      echo '';
     }
     if( DBCreate( 'mail', $okemail, "id = '{$iduser}'" ) ){
-      echo 'ok';
+      echo '';
     }
    else{
     echo '';
