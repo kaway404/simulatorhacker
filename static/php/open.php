@@ -23,6 +23,9 @@ if($app == 1){
 			<button class="appbrowser" id="paypal">
 			<img src="/img/paypal.png"/>
 			</button>
+      <button class="appbrowser" id="google">
+      <img src="/img/avatar.png"/>
+      </button>
 
 			<div class="background51"></div>
 		</div>
@@ -53,30 +56,101 @@ if($app == 1){
 		</div>
 
 
+   <div id="googlebaka">
+    <center>
+      <div class="bakabusca" id="nani">
+      <h1>ElgooG</h1>
+      <input id="busca" type="text" placeholder="Busque sites" />
+      <ul class="src">
+      </ul>
+            </div>
+    </center>
+    </div>
+
+<div id="viewsite"></div>
+
 		</div>
+
+<script src="static/js/js-all.js" type="text/javascript"></script>
+
+
+
 
 <script>
 var janela = document.getElementById('janela');
 var url = document.getElementById('janela');
 var internet = document.getElementById('suger');
 var apppaypal = document.getElementById('paypalbaka');
+var appgoogle = document.getElementById('googlebaka');
+var notifica = document.getElementById('notifica');
+
 janela.style = "opacity: 1; left: 0";
 
  $('#paypal').click(function(){
         	 document.getElementById("urlado").value = "https://paypal.com";
    		 });
 
+  $('#google').click(function(){
+           document.getElementById("urlado").value = "https://google.com";
+       });
+
  window.setInterval(function(){
 if(document.getElementById("urlado").value === "https://paypal.com") {
              internet.style = "display: none;"
+             appgoogle.style = "display: none;"
              apppaypal.style = "display: block;"
       }
      else if(document.getElementById("urlado").value === "https://google.com") {
              internet.style = "display: none;"
+             appgoogle.style = "display: block;"
+             apppaypal.style = "display: none;"
+      }
+
+    else if(document.getElementById("urlado").value === "paypal.com") {
+             internet.style = "display: none;"
+             appgoogle.style = "display: none;"
              apppaypal.style = "display: block;"
       }
+     else if(document.getElementById("urlado").value === "google.com") {
+             internet.style = "display: none;"
+             appgoogle.style = "display: block;"
+             apppaypal.style = "display: none;"
+      }
+
+      else if(document.getElementById("urlado").value === "http://paypal.com") {
+             internet.style = "display: none;"
+             appgoogle.style = "display: none;"
+             apppaypal.style = "display: block;"
+      }
+     else if(document.getElementById("urlado").value === "http://google.com") {
+             internet.style = "display: none;"
+             appgoogle.style = "display: block;"
+             apppaypal.style = "display: none;"
+      }
+
+     else if(document.getElementById("urlado").value === "https://www.paypal.com") {
+             internet.style = "display: none;"
+             appgoogle.style = "display: none;"
+             apppaypal.style = "display: block;"
+      }
+     else if(document.getElementById("urlado").value === "https://www.google.com") {
+             internet.style = "display: none;"
+             appgoogle.style = "display: block;"
+             apppaypal.style = "display: none;"
+      }
+
+      else if(document.getElementById("urlado").value === "www.paypal.com") {
+             internet.style = "display: none;"
+             appgoogle.style = "display: none;"
+             apppaypal.style = "display: block;"
+      }
+     else if(document.getElementById("urlado").value === "www.oogle.com") {
+             internet.style = "display: none;"
+             appgoogle.style = "display: block;"
+             apppaypal.style = "display: none;"
+      }
       else{
-      	 internet.style = "display: block;"
+         internet.style = "display: block;"
          apppaypal.style = "display: none;"
       }
           
@@ -84,6 +158,7 @@ if(document.getElementById("urlado").value === "https://paypal.com") {
 
  $('#close').click(function(){
         	 janela.style = "left: -2000px"
+           notifica.style = "opacity: 0; bottom: 0px";
    		 });
 
 </script>
@@ -135,7 +210,7 @@ data: dataString,
 cache: true,
 success: function(html){
 $("#show").after(html);
-document.getElementById('content').value='';
+document.getElementById('command').value='';
 $("#flash").hide();
 $("#content").focus();
 }  
@@ -175,9 +250,11 @@ if($app == 3){
 <script>
 var janela = document.getElementById('janela');
 var paypalbuy = document.getElementById('paypalbuy');
+  var notifica = document.getElementById('notifica');
 janela.style = "opacity: 1; left: 0";
  $('#close').click(function(){
         	 janela.style = "left: -2000px"
+            notifica.style = "opacity: 0; bottom: 0px";
    		 });
 
   $('#buy').click(function(){
@@ -215,7 +292,7 @@ if($app == 4){
   <h1>Mensagens</h1>
   <?php
 $idusermail = $user['id'];
-$resultsearchs2 = DBRead( 'mail', "WHERE iduser = '{$idusermail}'  LIMIT 1000" );
+$resultsearchs2 = DBRead( 'mail', "WHERE iduser = '{$idusermail}' LIMIT 1000" );
  if (!$resultsearchs2)
  echo '<h1>Nenhum E-mail</h1>';
 else
@@ -256,7 +333,10 @@ foreach ($resultsearchs2 as $resultsearch2):
 });
 </script>
 
+
 <?php endforeach; ?>
+
+
  </div>
 
 
@@ -275,6 +355,8 @@ var paypalbuy = document.getElementById('paypalbuy');
 janela.style = "opacity: 1; left: 0";
  $('#close').click(function(){
         	 janela.style = "left: -2000px"
+           var notifica = document.getElementById('notifica');
+            notifica.style = "opacity: 0; bottom: 0px";
    		 });
 </script>
 
@@ -290,7 +372,7 @@ if(isset($_GET['mailviews'])){
   <?php
 $idusermail = $user['id'];
 $mailid = $_POST['msg'];
-$resultsearchs23 = DBRead( 'mail', "WHERE id = '{$mailid}' and iduser = '{$idusermail}'  LIMIT 1" );
+$resultsearchs23 = DBRead( 'mail', "WHERE id = '{$mailid}' and iduser = '{$idusermail}' LIMIT 1" );
  if (!$resultsearchs23)
  echo '<h1>Nenhum E-mail</h1>';
 else

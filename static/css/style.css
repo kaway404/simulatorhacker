@@ -180,6 +180,12 @@
 		background: #fff;
 	}
 
+	#googlebaka{
+		display: none;
+		background: #fff;
+	}
+
+
 	.header-paypal{
 		width: 100%;
 		height: 90px;
@@ -540,4 +546,78 @@
 			padding: 15px;
 			position: relative;
 			left: 10px;
+		}
+
+		.bakabusca{
+			margin: 0px auto;
+			position: relative;
+			top: 50px;
+			width: 55%;
+		}
+
+		.bakabusca h1{
+			font-size: 4em;
+		}
+
+		.bakabusca input{
+			width: 100%;
+			position: relative;
+			top: 20px;
+			height: 40px;
+			padding-left: 10px;
+			border: none;
+			background: #e5e5e5;
+		}
+
+		.bakabusca button{
+			top: 40px;
+		    position: relative;
+		    width: 200px;
+		    height: 30px;
+		    background: #afaaaa;
+		    font-size: 1.5em;
+		    box-shadow: 1px 1px 1px rgba(0,0,0,.50);
+		    color: #fff;
+		    border: none;
+		    cursor: pointer;
+		}
+
+		.bakabusca button:hover{
+			background: #dfaaaa;
+		}
+
+		.src{
+			position: relative;
+			top: 90px;
+		}
+
+		.src p{
+			font-size: 1.4em;
+		}
+
+		.src li{
+			transition: 1s;
+			width: 60%;
+			position: relative;
+			cursor: pointer;
+		}
+
+		.src li:hover{
+			background: #e5e5e5;
+		}
+
+		#viewsite{
+			padding: 10px;
+		}
+
+		#notifica{
+			position: relative;
+			float: right;
+			background: #fff;
+			bottom: 0px;
+			padding: 15px;
+			transition: 1s;
+			opacity: 0;
+			z-index: 20000;
+			box-shadow: 1px 1px 1px rgba(0,0,0,.50);
 		}

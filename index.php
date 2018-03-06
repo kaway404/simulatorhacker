@@ -110,9 +110,18 @@ if(empty($_COOKIE['iduser']) and (empty($_COOKIE['inisession']))){
 <?php
 if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
 ?>
+
+<div id="notifica">
+<p id="msgnotifica"></p>
+</div>
+
 <script>
+var notifica = document.getElementById('notifica');
+
+
  $(document).ready(function() {
     $("#app").click(function() {
+        notifica.style = "opacity: 0; bottom: 0px";
         var app = 1;
         $.post("/static/php/open.php", {app: app},
         function(data){
@@ -125,6 +134,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
 
    $(document).ready(function() {
     $("#app2").click(function() {
+        notifica.style = "opacity: 0; bottom: 0px";
         var app = 2;
         $.post("/static/php/open.php", {app: app},
         function(data){
@@ -137,6 +147,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
 
      $(document).ready(function() {
     $("#app3").click(function() {
+        notifica.style = "opacity: 0; bottom: 0px";
         var app = 3;
         $.post("/static/php/open.php", {app: app},
         function(data){
@@ -149,6 +160,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
 
           $(document).ready(function() {
     $("#app4").click(function() {
+        notifica.style = "opacity: 0; bottom: 0px";
         var app = 4;
         $.post("/static/php/open.php", {app: app},
         function(data){
@@ -161,6 +173,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
 
  $(document).ready(function() {
     $("#appa").click(function() {
+        notifica.style = "opacity: 0; bottom: 0px";
         var app = 1;
         $.post("/static/php/open.php", {app: app},
         function(data){
@@ -173,6 +186,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
 
  $(document).ready(function() {
     $("#appa2").click(function() {
+        notifica.style = "opacity: 0; bottom: 0px";
         var app = 2;
         $.post("/static/php/open.php", {app: app},
         function(data){
@@ -185,6 +199,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
 
  $(document).ready(function() {
     $("#appa3").click(function() {
+        notifica.style = "opacity: 0; bottom: 0px";
         var app = 3;
         $.post("/static/php/open.php", {app: app},
         function(data){
@@ -197,6 +212,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
 
  $(document).ready(function() {
     $("#appa4").click(function() {
+        notifica.style = "opacity: 0; bottom: 0px";
         var app = 4;
         $.post("/static/php/open.php", {app: app},
         function(data){
